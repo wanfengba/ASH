@@ -1,0 +1,116 @@
+.grid{
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+}
+.hide {
+    display: none;
+}
+.github-index .one-git .search-title section {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.github-index .one-git .search-title svg {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    margin-right: 8px;
+}
+.github-index .one-git .search-title {
+    display: flex;
+    align-items: center;
+    height: 45px;
+    line-height: 45px;
+    color: var(--textD);
+    user-select: none;
+    font-size: 19px;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+}
+.panel-body {
+    padding: 15px;
+    position: relative;
+}
+.github_language {
+    position: absolute;
+    font-size: 20px;
+    color: var(--textD);
+    bottom: 6px;
+    right: 14px;
+}
+.clear {
+    display: block;
+    overflow: hidden;
+}
+.text-ellipsis {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.github_card {
+  text-align: center;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: .8rem;
+  background: var(--background);
+  box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 3%);
+  position: relative;
+}
+.github_card .card__content {
+  color: var(--textD);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.github_card .card__title {
+  color: var(--textD);
+  padding: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 2.2;
+}
+
+.github_card .card__date {
+  color: var(--textD);
+  font-size: 0.8rem;
+  line-height: 1.9;
+  opacity: .7;
+}
+
+.github_card .card__arrow {
+  position: absolute;
+  background: var(--theme);
+  padding: 0.4rem;
+  border-top-left-radius: .8rem;
+  border-bottom-right-radius: .8rem;
+  bottom: 0;
+  right: 0;
+  transition: 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.github_card svg {
+  transition: 0.2s;
+}
+
+/* hover */
+.github_card:hover .card__title {
+  color: var(--theme);
+  text-decoration: underline;
+}
+
+.github_card:hover .card__arrow {
+  background: #111;
+}
+
+.github_card:hover .card__arrow svg {
+  transform: translateX(3px);
+}
+.post-meta .item{
+    display: none;
+}
