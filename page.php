@@ -14,6 +14,7 @@
 </head>
 
 <body>
+<body>
   <div id="Joe">
     <!--导航风格切换-->
     <?php if ($this->options->Anav === 'one') : ?>
@@ -26,21 +27,22 @@
     <?php $this->need('CL-Head/Two-Head/Two-Head.php'); ?>
     <?php endif; ?>
     
-    <?php if ($this->options->Aframe === 'two') : ?>
-    <!--如果是风格二 要记得输出全局图片-->
+    <?php if ($this->options->Aframe_main === 'one') : ?>
+    <!--版本一输出-->
+    <?php $this->need('CL-Post/One-Post/Post-header.php'); ?>
+    
+    <?php elseif ($this->options->Aframe_main === 'two') : ?>
+    <!--引入链接-->
     <link href="<?php _getAssets('assets/css/Two-Index.css'); ?>" rel="stylesheet" />
     <!--版本二输出-->
     <?php $this->need('CL-Post/Two-Post/Post-header.php'); ?>
-    <?php endif; ?>
     
-    <?php if ($this->options->Aframe === 'three') : ?>
-    <!--风格三输出头部部分-->
-    <!--引入相关链接-->
-        <link href="<?php _getAssets('assets/css/Three-Index.css'); ?>" rel="stylesheet" />
-    <!--风格三搜索信息-->
-        <?php $this->need('CL-Post/Three-Post/Three-header.php'); ?>
+    <?php elseif ($this->options->Aframe_main === 'three') : ?>
+    <!--引入链接-->
+    <link href="<?php _getAssets('assets/css/Three-Index.css'); ?>" rel="stylesheet" />
+    <!--版本二输出-->
+    <?php $this->need('CL-Post/Three-Post/Three-header.php'); ?>
     <?php endif; ?>
-    
     <?php if ($this->options->Aframe === 'four') : ?>
     <!--判断是不是风格四-->
         <?php if ($this->options->Aframe_index === 'two') : ?>
