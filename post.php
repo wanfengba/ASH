@@ -27,19 +27,17 @@
     <?php $this->need('CL-Head/Two-Head/Two-Head.php'); ?>
     <?php endif; ?>
     
-    
-    <!--文章面包屑-->
-    <?php if ($this->options->Aframe === 'one') : ?>
+    <?php if ($this->options->Aframe_main === 'one') : ?>
     <!--版本一输出-->
     <?php $this->need('CL-Post/One-Post/Post-header.php'); ?>
     
-    <?php elseif ($this->options->Aframe === 'two') : ?>
+    <?php elseif ($this->options->Aframe_main === 'two') : ?>
     <!--引入链接-->
     <link href="<?php _getAssets('assets/css/Two-Index.css'); ?>" rel="stylesheet" />
     <!--版本二输出-->
     <?php $this->need('CL-Post/Two-Post/Post-header.php'); ?>
     
-    <?php elseif ($this->options->Aframe === 'three') : ?>
+    <?php elseif ($this->options->Aframe_main === 'three') : ?>
     <!--引入链接-->
     <link href="<?php _getAssets('assets/css/Three-Index.css'); ?>" rel="stylesheet" />
     <!--版本二输出-->
@@ -136,6 +134,7 @@
     
     <!--底部-->
     <?php $this->need('public/footer.php'); ?>
+
   </div>
 </body>
 
