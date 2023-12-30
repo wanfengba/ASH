@@ -96,6 +96,8 @@ $(document)
 					.change(ASH_index);
 				$("select[name\x3d'Aframe']")
 					.change(ASH_index)
+				$("select[name\x3d'Aframe_main']")
+					.change(ASH_index)
 			});
 	});
 function ASH_menu() {
@@ -163,18 +165,20 @@ function ASH_index() {
         $("textarea[name='AIndex_Notice']").parentsUntil("form").show();
         $("select[name='Aframe_index']").parentsUntil("form").hide();
     }else if(Aframe == 'two'){
+        $("input[name='Ahaed_Author']").parentsUntil("form").hide();
         $("input[name='Anav_Author']").parentsUntil("form").show();
-        $("input[name='Asubtitle']").parentsUntil("form").show();
-        $("input[name='Aweb_bg']").parentsUntil("form").show();
+        $("input[name='Asubtitle']").parentsUntil("form").hide();
+        $("input[name='Aweb_bg']").parentsUntil("form").hide();
         $("input[name='AIndex_Recommend']").parentsUntil("form").hide();
         $("input[name='AIndex_Hot']").parentsUntil("form").hide();
         $("textarea[name='AIndex_Notice']").parentsUntil("form").hide();
         $("select[name='Aframe_index']").parentsUntil("form").hide();
     }else if(Aframe == 'three'){
+        $("input[name='Ahaed_Author']").parentsUntil("form").hide();
         $("input[name='Anav_Author']").parentsUntil("form").show();
-        $("input[name='Asubtitle']").parentsUntil("form").show();
-        $("input[name='Aweb_bg']").parentsUntil("form").show();
-        $("select[name='Awaves']").parentsUntil("form").show();
+        $("input[name='Asubtitle']").parentsUntil("form").hide();
+        $("input[name='Aweb_bg']").parentsUntil("form").hide();
+        $("select[name='Awaves']").parentsUntil("form").hide();
         $("textarea[name='AIndex_Notice']").parentsUntil("form").hide();
         $("select[name='Aframe_index']").parentsUntil("form").hide();
     }else if(Aframe == 'four'){
@@ -192,5 +196,21 @@ function ASH_index() {
          $("input[name='Anav_Author']").parentsUntil("form").hide();
     }else{
          $("input[name='Anav_Author']").parentsUntil("form").show();
+    }
+    var Aframe_main = $("select[name='Aframe_main']").children('option:selected').val();
+    if(Aframe_main == 'two'){
+        $("input[name='Ahaed_Author']").parentsUntil("form").show();
+        $("input[name='Asubtitle']").parentsUntil("form").show();
+        $("input[name='Aweb_bg']").parentsUntil("form").show();
+    }else if(Aframe_main == 'three'){
+        $("input[name='Ahaed_Author']").parentsUntil("form").show();
+        $("input[name='Asubtitle']").parentsUntil("form").show();
+        $("input[name='Aweb_bg']").parentsUntil("form").show();
+        $("select[name='Awaves']").parentsUntil("form").show();
+    }else if(Aframe_main == 'one'){
+        $("input[name='Ahaed_Author']").parentsUntil("form").hide();
+        $("input[name='Asubtitle']").parentsUntil("form").hide();
+        $("input[name='Aweb_bg']").parentsUntil("form").hide();
+        $("select[name='Awaves']").parentsUntil("form").hide();
     }
 }
