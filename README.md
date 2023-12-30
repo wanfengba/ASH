@@ -1,3 +1,13 @@
+## 新版本更新
+
+下载地址：https://github.com/wanfengba/ASH/releases
+
+文件名字为ASH的话请修改成JandQ否则会出错
+
+1.0.2版本更新内容：
+1.头部图片单独设置
+2.机械样式按钮失灵问题
+
 ## Joe
 
 > 一款基于 Typecho 博客的双栏极致优化主题
