@@ -1,11 +1,12 @@
 <?php
 
 /**
- * 
- * 原版 joe 
- * 
- * @package ASH
- * @author 尘落
+ * “ 心中无女人，代码自然神 ” 
+ * “ 环境要求：PHP 5.4 ~ 7.4 ” 
+ * “ 主题由Joe和Qzdy结合，取名JandQ ” 
+ * @package JandQ 
+ * @author CWingYan
+ * @link http://liyizi.top/
  */
 
 ?>
@@ -34,13 +35,15 @@
     <?php $this->need('CL-Head/Two-Head/Two-Head.php'); ?>
     <?php endif; ?>
     
-    <?php if ($this->options->Aframe === 'two') : ?>
+    <?php if ($this->options->Aframe_main === 'two') : ?>
     <!--如果是风格二 要记得输出全局图片-->
+    <link href="<?php _getAssets('assets/css/Two_main.css'); ?>" rel="stylesheet" />
     <?php $this->need('CL-Index/Two-Index/Two-Header.php'); ?>
     <?php endif; ?>
     
-    <?php if ($this->options->Aframe === 'three') : ?>
+    <?php if ($this->options->Aframe_main === 'three') : ?>
     <!--如果是风格三 要记得输出头部图片-->
+    <link href="<?php _getAssets('assets/css/three_main.css'); ?>" rel="stylesheet" />
     <?php $this->need('CL-Index/Three-Index/Three-Header.php'); ?>
     <?php endif; ?>
     

@@ -43,7 +43,27 @@ function themeConfig($form) {
         
         <?php require_once('core/backup.php'); ?>
         
-        <div class="ASH_config__notice">请求数据中...</div>
+        <div class="ASH_config__notice">
+            <span style="line-height: 1.5;"><br  />
+                简介：主题来源Joe和Qzdy结合而来取名JandQ，之前见到一主题由Joe修改来设置功能挺多的，刚起步免费提供使用，后来更新越来越多了，开始付费，还挺贵的。也不是说买不起，但就是不想去花那个钱，不值。之后玩了几天WordPress发现了Qzdy主题，咋一看跟Joe差不多，但它可以切换文章模式，还是挺喜欢的，后来总用不习惯WordPress又换回了typecho，想着用Joe和Qzdy结合一下搞出个新主题来，就有了JandQ。</span>
+                <br  /><br  />1.0.2版本更新内容：<br  />
+                <ol>
+                    <li>添加导航栏风格（双层\单层）</li>
+                    <li>网站风格（四种不同风格/第四种风格分两种样式）</li>
+                    <li>飘落特效（樱花特效\雪花特效）</li>
+                    <li>侧栏切换（左\右\关）</li>
+                    <li>单栏自定义宽度</li>
+                    <li>网站头部风格（无图\大图\小图）</li>
+                </ol>
+                为了更好的替换静态资源，建议操作：<br  />
+                <ol>
+                <li>不备份设置</li>
+                <li>直接切换主题</li>
+                <li>重新进行主题设置</li>
+                <ol>
+                <br  />
+                <span style="color: #b94a48;">本主题JandQ永久免费使用，请使用者莫要修改倒卖。</span>
+        </div>
     </div>
     
 <?php
@@ -204,10 +224,10 @@ function themeConfig($form) {
     $AFooter_Left = new Typecho_Widget_Helper_Form_Element_Textarea(
     'AFooter_Left',
     NULL,
-    '2019 - 2020 © Reach - <a href="https://78.al" target="_blank" rel="noopener noreferrer">Joe</a>',
+    '2019 - 2023 © Reach - <a href="http://liyizi.top/" target="_blank" rel="noopener noreferrer">CWingYan</a>',
     '自定义底部栏左侧内容（非必填）',
     '介绍：用于修改全站底部左侧内容（wap端上方） <br>
-         例如：2019 - 2020 © Reach - Joe             '
+         例如：2019 - 2023 © Reach - CWingYan             '
     );
     $AFooter_Left->setAttribute('class', 'typecho-option ASH_basic');
     $form->addInput($AFooter_Left);
@@ -215,8 +235,8 @@ function themeConfig($form) {
     $AFooter_Right = new Typecho_Widget_Helper_Form_Element_Textarea(
     'AFooter_Right',
     NULL,
-    '<a href="https://78.al/feed/" target="_blank" rel="noopener noreferrer">RSS</a>
-         <a href="https://78.al/sitemap.xml" target="_blank" rel="noopener noreferrer" style="margin-left: 15px">MAP</a>',
+    '<a href="http://liyizi.top/feed/" target="_blank" rel="noopener noreferrer">RSS</a>
+         <a href="http://liyizi.top/sitemap.xml" target="_blank" rel="noopener noreferrer" style="margin-left: 15px">MAP</a>',
     '自定义底部栏右侧内容（非必填）',
     '介绍：用于修改全站底部右侧内容（wap端下方） <br>
          例如：&lt;a href="/"&gt;首页&lt;/a&gt; &lt;a href="/"&gt;关于&lt;/a&gt;'
@@ -327,7 +347,7 @@ function themeConfig($form) {
     $Aside_Author_Nick = new Typecho_Widget_Helper_Form_Element_Text(
     'Aside_Author_Nick',
     NULL,
-    "尘落",
+    "CWingYan",
     '博主栏博主昵称 - PC/WAP',
     '介绍：用于修改博主栏的博主昵称 <br />
          注意：如果不填写时则显示 *个人设置* 里的昵称'
@@ -371,7 +391,7 @@ function themeConfig($form) {
     $Aside_Author_Link = new Typecho_Widget_Helper_Form_Element_Text(
     'Aside_Author_Link',
     NULL,
-    "https://78.al",
+    "http://liyizi.top/",
     '博主栏昵称跳转地址 - PC/WAP',
     '介绍：用于修改博主栏点击博主昵称后的跳转地址'
     );
@@ -573,7 +593,7 @@ function themeConfig($form) {
     $Anav_Author = new Typecho_Widget_Helper_Form_Element_Text(
     'Anav_Author',
     NULL,
-    "尘落",
+    "CWingYan",
     '导航显示文字logo - PC/WAP',
     '介绍：用于导航栏的文字logo '
     );
@@ -596,6 +616,21 @@ function themeConfig($form) {
     $Aframe->setAttribute('class', 'typecho-option ASH_index');
     $form->addInput($Aframe->multiMode());
     
+    $Aframe_main = new Typecho_Widget_Helper_Form_Element_Select(
+    'Aframe_main',
+    array(
+      'one' => '风格一（默认）',
+      'two' => '风格二',
+      'three' => '风格三'
+    ),
+    'one',
+    '网站头部风格',
+    '介绍：默认无图<br>
+         注意：风格不保证全部不一样，只是在原有的基础上修改一二'
+    );
+    $Aframe_main->setAttribute('class', 'typecho-option ASH_index');
+    $form->addInput($Aframe_main->multiMode());
+    
     $Aframe_index = new Typecho_Widget_Helper_Form_Element_Select(
     'Aframe_index',
     array(
@@ -613,7 +648,7 @@ function themeConfig($form) {
     $Ahaed_Author = new Typecho_Widget_Helper_Form_Element_Text(
     'Ahaed_Author',
     NULL,
-    "尘落",
+    "CWingYan",
     '首页输出名字 - PC/WAP',
     '介绍：可以直接保存先，看这两个字出现在哪里，那就是改哪里'
     );
@@ -634,7 +669,7 @@ function themeConfig($form) {
     $Aweb_bg = new Typecho_Widget_Helper_Form_Element_Text(
     'Aweb_bg',
     NULL,
-    "https://bu.dusays.com/2023/01/21/63cb9c36bb8b1.webp",
+    "https://gd-hbimg.huaban.com/6a3419ccf3135eb1b390023a4caff385361196d2aef6-q7iGfU_fw1200",
     '背景图 - PC/WAP',
     '介绍：背景图 <br>
      注意：支持API'
@@ -956,7 +991,7 @@ function themeConfig($form) {
     $AFriends = new Typecho_Widget_Helper_Form_Element_Textarea(
     'AFriends',
     NULL,
-    'Joe的博客 || https://78.al || https://npm.elemecdn.com/typecho-joe-latest/assets/img/link.png || Eternity is not a distance but a decision',
+    'http://liyizi.top/的博客 || http://liyizi.top/ || || 世界和平',
     '友情链接（非必填）',
     '介绍：用于填写友情链接 <br />
          注意：您需要先增加友链链接页面（新增独立页面-右侧模板选择友链），该项才会生效 <br />
